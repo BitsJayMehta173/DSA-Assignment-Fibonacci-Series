@@ -15,7 +15,7 @@ int main()
         printf("0");
       }
       else{
-        number=number-1;
+        number--;
       for(int i=0;i<number;i++)
       {
           for(int j=0;j<5000;j++)
