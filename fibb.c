@@ -4,7 +4,7 @@ int main()
 {
       int a[20000]={0};
       int b[20000]={0};
-      long long res[20000]={0};
+      int res[20000]={0};
       a[0]=0;
       b[0]=1;
       int carry=0;
