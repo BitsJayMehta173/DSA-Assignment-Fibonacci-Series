@@ -11,7 +11,7 @@ int main()
       int carry=0;
       int stopper=1;
       int number;
-      printf("Enter n for nth Fibonacci : ");
+      printf("Enter n for nth Fibonacci term : ");
       scanf("%d",&number);
       for(int i=0;i<number;i++)
       {
