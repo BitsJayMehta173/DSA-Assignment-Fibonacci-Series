@@ -1,16 +1,11 @@
 #include <stdio.h>
 
-char a[5000];
-char b[5000];
-char res[5000];
+char a[5000],b[5000],res[5000];
 
 int main()
 {
-      a[0]=0;
-      b[0]=1;
-      int carry=0;
-      int stopper=1;
-      int number;
+      a[0]=0,b[0]=1;
+      int carry=0,stopper=1,number;
       printf("Enter n for nth Fibonacci term : ");
       scanf("%d",&number);
       for(int i=0;i<number;i++)
@@ -49,5 +44,4 @@ int main()
             pass=1;
           }
         }
-      printf("\n");
 }
