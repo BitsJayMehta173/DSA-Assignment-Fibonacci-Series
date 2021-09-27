@@ -1,26 +1,24 @@
 #include <stdio.h>
 
+char a[5000];
+char b[5000];
+char res[5000];
+
 int main()
 {
-      int a[20000]={0};
-      int b[20000]={0};
-      int res[20000]={0};
       a[0]=0;
       b[0]=1;
       int carry=0;
+      int stopper=1;
       int number;
+      printf("Enter n for nth Fibonacci : ");
       scanf("%d",&number);
-      if(number==1)
-      {
-        printf("0");
-      }
-      else{
-        number--;
       for(int i=0;i<number;i++)
       {
-          for(int j=0;j<5000;j++)
+          for(int j=0;j<stopper;j++)
           {
             res[j]=a[j]+b[j]+carry;
+            int checker=res[j];
             carry=0;
             int now=res[j];
             if(now>=10)
@@ -28,15 +26,22 @@ int main()
               res[j]=now%10;
               carry=now/10;
             }
+            if(j==stopper-1 && checker>=10)
+            {
+              res[j+1]=a[j+1]+b[j+1]+carry;
+              carry=0;
+              stopper++;
+              break;
+            }
           }
-            for(int j=(number-1);j>=0;j--)
+            for(int j=stopper;j>=0;j--)
             {
               b[j]=a[j];
               a[j]=res[j];
             }
         }
         int pass=0;
-        for(int j=4999;j>=0;j--)
+        for(int j=stopper;j>=0;j--)
         {
           if(pass==1 || res[j]!=0)
           {
@@ -44,6 +49,5 @@ int main()
             pass=1;
           }
         }
-      }
       printf("\n");
 }
